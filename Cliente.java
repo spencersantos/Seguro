@@ -8,6 +8,7 @@ public class Cliente {
 	private boolean TemSinistro;
 	
 	
+	
 	public boolean isTemSinistro() {
 		return TemSinistro;
 	}
@@ -38,6 +39,7 @@ public class Cliente {
 	public void setValorImovel(double valorImovel) {
 		ValorImovel = valorImovel;
 	}
+	
 	
 	
 	

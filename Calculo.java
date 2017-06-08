@@ -1,7 +1,7 @@
 
 public class Calculo {
 	
-	public void SeguroResidencial(PessoaFisica pessoa){
+	public void seguroResidencial(PessoaFisica pessoa){
 		
 		pessoa.setSeguro(pessoa.getValorImovel()*0.02);
 		if(pessoa.getAreaImovel()==1){
@@ -14,7 +14,7 @@ public class Calculo {
 		
 	}
 	//Metodo para calcular o seguro Empresarial
-	public void SeguroEmpresarial(PessoaJuridica pessoa){
+	public void seguroEmpresarial(PessoaJuridica pessoa){
 		
 		pessoa.setSeguro(pessoa.getValorImovel()*0.04);
 		//acrescenta 0.2% a cada 10 funcionarios
@@ -39,7 +39,7 @@ public class Calculo {
 		if(pessoa.getRamo()==3)
 			System.out.println("Agropecuaria");
 	}
-	public void Area(PessoaFisica pessoa){
+	public void area(PessoaFisica pessoa){
 		if(pessoa.getAreaImovel()==1)
 			System.out.println("Urbana");
 		if(pessoa.getAreaImovel()==2)

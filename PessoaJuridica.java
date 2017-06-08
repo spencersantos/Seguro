@@ -5,6 +5,7 @@ public class PessoaJuridica extends Cliente {
 	private int NumVisitasDiarias;
 	//Ramo 1-Comercio,2-Industria,3-Agropecuaria	
 	private int ramo;
+	private int cnpj;
 	
 	
 	public int getNumFuncionarios() {
@@ -24,6 +25,12 @@ public class PessoaJuridica extends Cliente {
 	}
 	public void setRamo(int ramo) {
 		this.ramo = ramo;
+	}
+	public int getCnpj() {
+		return cnpj;
+	}
+	public void setCnpj(int cnpj) {
+		this.cnpj = cnpj;
 	}
 
 }

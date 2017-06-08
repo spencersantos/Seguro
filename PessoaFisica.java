@@ -6,7 +6,7 @@ public class PessoaFisica extends Cliente {
 	private boolean Residencia;
 	//Areas 1-Urbana,2-SubUrbana,3-Rural
 	private int areaImovel;
-	
+	private int cpf;
 	
 	
 	public String getEndereco() {
@@ -26,6 +26,12 @@ public class PessoaFisica extends Cliente {
 	}
 	public void setAreaImovel(int areaImovel) {
 		this.areaImovel = areaImovel;
+	}
+	public int getCpf() {
+		return cpf;
+	}
+	public void setCpf(int cpf) {
+		this.cpf = cpf;
 	}
 
 }
