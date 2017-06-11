@@ -19,7 +19,7 @@ public class Conexao {
 		ResultSet rs = st.executeQuery("select * from cliente");
 		while(rs.next()){
 		cliente.setCliente(rs.getString("cliente"));
-		cliente.setCpf(rs.getInt("cpf"));
+		cliente.setCpf(rs.getLong("cpf"));
 		cliente.setEndereco(rs.getString("endereco"));
 		cliente.setValorImovel(rs.getDouble("valorimovel"));
 		cliente.setAreaImovel(rs.getInt("areaimovel"));
@@ -39,7 +39,7 @@ public class Conexao {
 		}
 
 		}
-	public void guardarClientePf(String cliente, int cpf){
+	public void guardarClientePf(String cliente, long cpf){
 	
 		try{
 			String userName = "root";
@@ -51,7 +51,7 @@ public class Conexao {
 			
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, cliente);
-			stmt.setInt(2, cpf);
+			stmt.setLong(2, cpf);
 			stmt.execute();  
 	        stmt.close();
 			conn.close();
@@ -74,8 +74,8 @@ public class Conexao {
 		ResultSet rs = st.executeQuery("select * from cliente_emp");
 		while(rs.next()){
 		cliente.setCliente(rs.getString("cliente"));
-		cliente.setCnpj(rs.getInt("cnpj"));
-		cliente.setValorImovel(rs.getInt("valorimovel"));
+		cliente.setCnpj(rs.getLong("cnpj"));
+		cliente.setValorImovel(rs.getDouble("valorimovel"));
 		cliente.setNumFuncionarios(rs.getInt("numfuncionarios"));
 		cliente.setNumVisitasDiarias(rs.getInt("numvisitas"));
 		cliente.setRamo(rs.getInt("ramo"));
@@ -94,7 +94,7 @@ public class Conexao {
 		}
 		
 	}
-	public void guardarCliPj(String cliente, int cnpj){
+	public void guardarCliPj(String cliente, long cnpj){
 		try{
 			String userName = "root";
 	        String password = "";
@@ -105,7 +105,7 @@ public class Conexao {
 			
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, cliente);
-			stmt.setInt(2, cnpj);
+			stmt.setLong(2, cnpj);
 			stmt.execute();  
 	        stmt.close();
 			conn.close();
@@ -131,7 +131,7 @@ public class Conexao {
 			stmt.setInt(2, cliente.getNumFuncionarios());
 			stmt.setInt(3, cliente.getNumVisitasDiarias());
 			stmt.setInt(4, cliente.getRamo());
-			stmt.setInt(5, cliente.getCnpj());
+			stmt.setLong(5, cliente.getCnpj());
 			stmt.execute();  
 	        stmt.close();
 			conn.close();
@@ -156,7 +156,7 @@ public class Conexao {
 		stmt.setDouble(2, cliente.getValorImovel());
 		stmt.setInt(3, cliente.getAreaImovel());
 		stmt.setBoolean(4, cliente.isResidencia());
-		stmt.setInt(5, cliente.getCpf());
+		stmt.setLong(5, cliente.getCpf());
 		stmt.execute();  
         stmt.close();
 		conn.close();
@@ -179,7 +179,7 @@ public class Conexao {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setBoolean(1, cliente.isTemSinistro());
 			stmt.setString(2, cliente.getDataSinistro());
-			stmt.setInt(3, cliente.getCpf());
+			stmt.setLong(3, cliente.getCpf());
 			stmt.execute();  
 	        stmt.close();
 			conn.close();
@@ -202,7 +202,7 @@ public class Conexao {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setBoolean(1, cliente.isTemSinistro());
 			stmt.setString(2, cliente.getDataSinistro());
-			stmt.setInt(3, cliente.getCnpj());
+			stmt.setLong(3, cliente.getCnpj());
 			stmt.execute();  
 	        stmt.close();
 			conn.close();

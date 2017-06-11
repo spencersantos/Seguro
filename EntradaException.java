@@ -3,19 +3,19 @@ import java.util.Scanner;
 public class EntradaException {
 	 private static Scanner scanner = new Scanner(System.in);
 	 
-	    public static int scannerInt() {
-	        int i;
+	    public static long scannerLong() {
+	        long l;
 	        while (true) {
 	            try {
-	                i = scanner.nextInt();
+	                l = scanner.nextLong();
 	                break;
 	            } catch (Exception InputMismatchException) {
-	                System.out.println("Não é um numéro inteiro.");
+	                System.out.println("Não é um numéro inteiro grande.");
 	                scanner.next();
 	                
 	            }
 	        }
-	        return i;
+	        return l;
 	    }
 	     
 	    public static double scannerDouble() {
@@ -31,5 +31,18 @@ public class EntradaException {
 	        }
 	        return d;
 	    }
-
+	    public static int scannerInt() {
+	        int i;
+	        while (true) {
+	            try {
+	                i = scanner.nextInt();
+	                break;
+	            } catch (Exception InputMismatchException) {
+	                System.out.println("Não é um numéro inteiro.");
+	                scanner.next();
+	                
+	            }
+	        }
+	        return i;
+	    }
 }
